@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://particle.shader" type="Shader" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://particle.gd" type="Script" id=3]
+[ext_resource path="res://metaballs.shader" type="Shader" id=4]
+[ext_resource path="res://circle.png" type="Texture" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/target = Vector2( 100, 400 )
+
+[sub_resource type="ShaderMaterial" id=2]
+render_priority = 10
+shader = ExtResource( 4 )
+shader_param/blurSize = 35
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+background_color = Color( 1, 0, 0, 1 )
+glow_levels/1 = true
+glow_levels/3 = false
+glow_levels/4 = true
+glow_levels/6 = true
+glow_levels/7 = true
+glow_intensity = 1.0
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spatial2" type="Particles2D" parent="."]
+position = Vector2( 543.848, -85.126 )
+amount = 500
+lifetime = 10.0
+speed_scale = 0.5
+process_material = SubResource( 1 )
+texture = ExtResource( 5 )
+script = ExtResource( 3 )
+
+[node name="metaballs" type="TextureRect" parent="."]
+visible = false
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
