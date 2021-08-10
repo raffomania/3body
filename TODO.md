@@ -1,0 +1,3 @@
+- randomize green color distribution
+- get music input
+- react to music FFT
