@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/world problems.mp3-1bbb17f363768a333114b0eb728c0b02.mp3str"
+
+[deps]
+
+source_file="res://audio/world problems.mp3"
+dest_files=[ "res://.import/world problems.mp3-1bbb17f363768a333114b0eb728c0b02.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

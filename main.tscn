@@ -1,14 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://particle.shader" type="Shader" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://particle.gd" type="Script" id=3]
 [ext_resource path="res://metaballs.shader" type="Shader" id=4]
 [ext_resource path="res://circle.png" type="Texture" id=5]
+[ext_resource path="res://audio/world problems.mp3" type="AudioStream" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 shader_param/target = Vector2( 100, 400 )
+shader_param/beat = null
+shader_param/energy = null
 
 [sub_resource type="ShaderMaterial" id=2]
 render_priority = 10
@@ -57,3 +60,7 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
